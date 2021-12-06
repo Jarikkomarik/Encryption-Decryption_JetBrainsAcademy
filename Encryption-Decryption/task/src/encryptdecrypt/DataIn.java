@@ -1,5 +1,7 @@
 package encryptdecrypt;
 
+import java.io.IOException;
+
 public interface DataIn { // interface of data input execution
-    public String getData(String file, String data);
+    String getData(String file, String data) throws IOException;
 }

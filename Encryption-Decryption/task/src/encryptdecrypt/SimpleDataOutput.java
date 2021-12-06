@@ -1,8 +1,8 @@
 package encryptdecrypt;
 
-public class SimpleDataOutput implements DataOut{
+public class SimpleDataOutput implements DataOut {
     @Override
-    public void PassData(String file, String data) {
+    public void passData(String file, String data) {
         System.out.println(data);
     }
 }

@@ -4,22 +4,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileDataOutput implements DataOut{
+public class FileDataOutput implements DataOut {
     @Override
-    public void PassData(String file, String data) {
+    public void passData(String file, String data) throws IOException {
         File out = new File(file);
-        try {
-            out.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error: not possible to create file");
-        }
+        out.createNewFile();
 
-        try(FileWriter w = new FileWriter(out)) {
+        try (FileWriter w = new FileWriter(out)) {
             w.write(data);
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error: IO Exception");
         }
     }
 }

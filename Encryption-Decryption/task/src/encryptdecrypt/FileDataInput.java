@@ -1,24 +1,14 @@
 package encryptdecrypt;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FileDataInput implements DataIn{
+public class FileDataInput implements DataIn {
     @Override
-    public String getData(String file, String data) {
+    public String getData(String file, String data) throws IOException {
         String fileData = "";
-        try{
-            fileData = new String(Files.readAllBytes(Paths.get(file)));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Error: file not found");
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Error: IO Exception");
-        }
-
+        fileData = new String(Files.readAllBytes(Paths.get(file)));
         return fileData;
     }
 }
