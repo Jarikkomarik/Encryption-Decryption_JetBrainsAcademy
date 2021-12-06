@@ -4,7 +4,6 @@ import java.io.IOException;
 
 public class CipherExecutor { //class that takes main execution of Encryption
     private Mode mode;
-    //private String alg = "shift";
     private Algorithm alg;
     private int key = 0;
     private String data = "";
